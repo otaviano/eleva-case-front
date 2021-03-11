@@ -5,9 +5,9 @@ import { SchoolListComponent } from './school/components/list/list.component';
 import { SchoolCreateComponent } from './school/components/create/create.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '', redirectTo: 'schools', pathMatch: 'full' },
   { path: 'schools', component: SchoolListComponent },
-  { path: 'create', component: SchoolCreateComponent }
+  { path: 'schools/create', component: SchoolCreateComponent }
 ];
 
 @NgModule({
