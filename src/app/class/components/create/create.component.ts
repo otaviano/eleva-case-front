@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Class } from '../../models/class.model';
-import { SchoolSelectListComponent } from '../../../school/components/select-list';
 import { ClassService } from 'src/app/class/services/class.service';
 
 @Component({
@@ -17,8 +16,9 @@ export class ClassCreateComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  createclass(): void {
+  createClass(): void {
     const data = {
+      SchoolId: Number(this.class.SchoolId),
       Name: this.class.Name,
       Description: this.class.Description
     };
@@ -34,7 +34,11 @@ export class ClassCreateComponent implements OnInit {
         });
   }
 
-  newclass(): void {
+  onSelectedSchool(schoolId: number) {
+    this.class.SchoolId = schoolId;
+  }
+
+  newClass(): void {
     this.submitted = false;
     this.class = new Class();
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { School } from '../../models/school.model';
 import { SchoolService } from 'src/app/school/services/school.service';
@@ -10,19 +10,18 @@ import { SchoolService } from 'src/app/school/services/school.service';
 export class SchoolSelectListComponent implements OnInit {
   
   @Input() preSelectedId: number;
-  
-  selectedId:number;
+  @Output() selected = new EventEmitter<number>();
+
   schools: School[];
 
   constructor(private schoolService: SchoolService) { }
 
   ngOnInit(): void {  
     this.readSchools();
-    this.selectedId = this.preSelectedId;
   }
-  
-  get selectedValue(): number {
-    return this.selectedId;
+
+  onSelected(e) {
+    this.selected.emit(e.target.value);
   }
 
   readSchools(): void {

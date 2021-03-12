@@ -3,8 +3,9 @@
     <select 
           name="class"
           class="form-control"
-          [(ngModel)]="selectedId"
+          (change)="onSelected($event)"
           required>
+          <option [value]="0">Escolha uma escola</option>
           <option 
             *ngFor="let p of schools" 
             [value]="p.id">

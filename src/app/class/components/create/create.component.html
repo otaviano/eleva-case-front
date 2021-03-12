@@ -1,7 +1,9 @@
 <div style="width: 500px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
-        <school-select-list [preSelectedId]="0">
+        <school-select-list 
+          [preSelectedId]="0"
+          (selected)="onSelectedSchool($event)">
         </school-select-list>
         
         <div class="form-group">
@@ -29,7 +31,7 @@
       </div>
   
       <div *ngIf="submitted">
-        <h3>Turma criada com sucesso!</h3>
+        <h3>Solicitação do cadastro de turma recebido!</h3>
         <button class="btn btn-success" (click)="newClass()">Novo...</button>
       </div>
     </div>

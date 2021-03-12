@@ -5,13 +5,11 @@ import { RouterModule }   from '@angular/router';
 
 import { SchoolCreateComponent } from './components/create/create.component';
 import { SchoolListComponent } from './components/list/list.component';
-//import { SchoolSelectListComponent } from './components/select-list/select-list.component';
 
 @NgModule({
   declarations: [
     SchoolCreateComponent, 
     SchoolListComponent
-    //, SchoolSelectListComponent
   ],
   imports: [
     CommonModule,
