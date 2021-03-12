@@ -17,7 +17,7 @@ export class ClassService {
     return this.httpClient.get(baseURL);
   }
 
-  searchByName(name:string): Observable<any> {
-    return this.httpClient.get(`${baseURL}?name=${name}`);
+  search(schoolId:number, name:string): Observable<any> {
+    return this.httpClient.get(`${baseURL}?schoolId=${schoolId}&name=${name}`);
   }
 }

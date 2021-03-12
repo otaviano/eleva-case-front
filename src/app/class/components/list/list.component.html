@@ -1,8 +1,14 @@
 <div class="row">
-  <div class="input-group mb-3">
+  <div class="input-group mb-5">
+    <div class="input-group-prepend">
+      <school-select-list 
+        [preSelectedId]="0"
+        (selected)="onSelectedSchool($event)">
+      </school-select-list>
+    </div>
     <input type="text" class="form-control" placeholder="Pesquisa de turmas" aria-label="Pesquisa de turmas" aria-describedby="basic-addon2" [(ngModel)]="name">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" (click)="searchByName()">Pesquisar</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="search()">Pesquisar</button>
     </div>
   </div>
 </div>
@@ -17,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of class;">
+      <tr *ngFor="let p of classes;">
           <td><span>{{p.name}}</span></td>
           <td><span>{{p.description}}</span></td>
       </tr>

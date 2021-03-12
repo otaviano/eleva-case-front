@@ -9,33 +9,25 @@ import { ClassService } from 'src/app/class/services/class.service';
   styleUrls: ['./list.component.css']
 })
 export class ClassListComponent implements OnInit {
-  class: Class[];
+  classes: Class[];
   name = '';
+  schoolId = 0;
 
   constructor(private classService: ClassService) { }
 
-  ngOnInit(): void {  
-    this.readclasss();
+  ngOnInit(): void {
   }
 
-  readclasss(): void {
-    this.classService.readAll()
-      .subscribe(
-        p => {
-          this.class = p;
-          console.log(this.class);
-        },
-        error => {
-          console.log(error);
-        });
+  onSelectedSchool(schoolId: number) {
+    this.schoolId = schoolId;
   }
 
-  searchByName(): void {
-    this.classService.searchByName(this.name)
+  search(): void {
+    this.classService.search(this.schoolId, this.name)
       .subscribe(
         p => {
-          this.class = p;
-          console.log(this.class);
+          this.classes = p;
+          console.log(this.classes);
         },
         error => {
           console.log(error);

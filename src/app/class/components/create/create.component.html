@@ -1,10 +1,13 @@
 <div style="width: 500px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
-        <school-select-list 
-          [preSelectedId]="0"
-          (selected)="onSelectedSchool($event)">
-        </school-select-list>
+        <label for="class">Turma</label>
+        <div class="form-group">
+          <school-select-list 
+            [preSelectedId]="0"
+            (selected)="onSelectedSchool($event)">
+          </school-select-list>
+        </div>
         
         <div class="form-group">
           <label for="name">Nome</label>

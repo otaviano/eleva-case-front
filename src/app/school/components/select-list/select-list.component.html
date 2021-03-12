@@ -1,16 +1,12 @@
-<div class="form-group">
-  <label for="class">Turma</label>
-    <select 
-          name="class"
-          class="form-control"
-          (change)="onSelected($event)"
-          required>
-          <option [value]="0">Escolha uma escola</option>
-          <option 
-            *ngFor="let p of schools" 
-            [value]="p.id">
-            {{ p.name }}
-          </option>
-        </select>
-
-</div>
+<select 
+  name="class"
+  class="form-control"
+  (change)="onSelected($event)"
+  required>
+  <option [value]="0">Escolha uma escola</option>
+  <option 
+    *ngFor="let p of schools" 
+    [value]="p.id">
+    {{ p.name }}
+  </option>
+</select>
