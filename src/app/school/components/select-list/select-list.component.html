@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label for="class">Turma</label>
+    <select 
+          name="class"
+          class="form-control"
+          [(ngModel)]="selectedId"
+          required>
+          <option 
+            *ngFor="let p of schools" 
+            [value]="p.id">
+            {{ p.name }}
+          </option>
+        </select>
+
+</div>

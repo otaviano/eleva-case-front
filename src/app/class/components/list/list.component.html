@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Pesquisa de turmas" aria-label="Pesquisa de turmas" aria-describedby="basic-addon2" [(ngModel)]="name">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="searchByName()">Pesquisar</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <h4>Lista de turmas</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of class;">
+          <td><span>{{p.name}}</span></td>
+          <td><span>{{p.description}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

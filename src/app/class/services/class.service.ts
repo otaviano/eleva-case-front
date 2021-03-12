@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-//const baseURL = 'https://eleva-case.azurewebsites.net/api/schools';
-const baseURL = 'http://localhost:5000/api/schools';
+//const baseURL = 'https://eleva-case.azurewebsites.net/api/Classes';
+const baseURL = 'http://localhost:5000/api/Classes';
 @Injectable( { providedIn: 'root' } )
-export class SchoolService {
+export class ClassService {
 
   constructor(private httpClient: HttpClient) { }
 
