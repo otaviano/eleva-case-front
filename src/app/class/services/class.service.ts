@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
-const baseURL = 'https://eleva-case.azurewebsites.net/api/Classes';
-//const baseURL = 'http://localhost:5000/api/Classes';
+const baseURL = `${environment.apiUrl}/api/Classes`;
 
 @Injectable( { providedIn: 'root' } )
 export class ClassService {
